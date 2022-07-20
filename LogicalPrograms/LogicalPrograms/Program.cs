@@ -9,13 +9,13 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            //ReverseNumber.PrintTheReverseNumber();
+            ReverseNumber.PrintTheReverseNumber();
 
             //FibonacciSeries.PrintingFibonacci();
 
             //PerfectNumber.FindingPerfectNumber();
 
-            PrimeNumber.PrintThePrimeNum();
+           // PrimeNumber.PrintThePrimeNum();
 
         }
     }
