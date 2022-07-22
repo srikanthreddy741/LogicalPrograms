@@ -1,26 +1,42 @@
-﻿namespace LogicalPrograms
+﻿using System.Diagnostics;
+
+namespace LogicalPrograms
 {
     class Program
     {
-        static Random random = new Random();
+        static Stopwatch watch = new Stopwatch();
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter How many unique coupons do you want: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-            distinctCoupon(number);
+            Start();
         }
-        static void generateCoupon()
+        static void Start()
         {
-            double coupon = (random.NextDouble() * 1000000);
-            Console.WriteLine((int)coupon);
+            StartStopWatch();
+            EndStopWatch();
+
+            Console.WriteLine("Measure the elapsed time: " + watch.Elapsed);
         }
-        static void distinctCoupon(int number)
+        static void StartStopWatch()
         {
-            Console.WriteLine("Unique Coupons are: ");
-            while (number > 0)
+            string input = "null";
+            while (input != "1")
             {
-                generateCoupon();
-                number--;
+                Console.WriteLine("Enter the \'1\' to Start the StopWatch: ");
+                input = Console.ReadLine();
+                if (input == "1")
+                    watch.Start();
+            }
+        }
+        static void EndStopWatch()
+        {
+            string input = "null";
+            while (input != "0")
+            {
+                Console.WriteLine("Enter the \'0\' to Stop the StopWatch:");
+                input = Console.ReadLine();
+
+                if (input == "0")
+                    watch.Stop();
             }
         }
     }
